@@ -1,0 +1,57 @@
+.root
+{
+    flex-direction: row;
+    height: 100%;
+}
+
+.panel
+{
+    width: 480px;
+    background-color: rgba(35,35,40,0.92);
+    padding: 25px;
+    flex-direction: column;
+}
+
+.title
+{
+    font-size: 32px;
+    unity-font-style: bold;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.section
+{
+    margin-top: 20px;
+    font-size: 20px;
+    unity-font-style: bold;
+    color: white;
+}
+
+Button
+{
+    margin-top: 10px;
+    height: 45px;
+    font-size: 18px;
+    color: white;
+}
+
+Slider
+{
+    margin-top: 10px;
+    height: 35px;
+}
+
+Label
+{
+    font-size: 18px;
+    color: white;
+}
+
+.graphPanel
+{
+    flex-grow: 1;
+    height: 200px;
+    background-color: rgba(10,10,10,0.8);
+    margin: 20px;
+}
