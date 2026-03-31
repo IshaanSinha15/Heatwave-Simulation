@@ -1,0 +1,106 @@
+<Scenario xmlns="uri:/mil/tatrc/physiology/datamodel" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" contentVersion="BioGears_6.3.0-beta">
+
+<Name>ModerateHeat</Name>
+<Description>Moderate heat day progression</Description>
+
+<InitialParameters>
+<PatientFile>Male_25_Normal.xml</PatientFile>
+</InitialParameters>
+
+<DataRequests SamplesPerSecond="5" Filename="runs/moderatescenarioResults.csv">
+<DataRequest xsi:type="PhysiologyDataRequestData" Name="HeartRate" Unit="1/min"/>
+<DataRequest xsi:type="PhysiologyDataRequestData" Name="CoreTemperature" Unit="degC"/>
+<DataRequest xsi:type="PhysiologyDataRequestData" Name="SkinTemperature" Unit="degC"/>
+<DataRequest xsi:type="PhysiologyDataRequestData" Name="SweatRate"/>
+<DataRequest xsi:type="PhysiologyDataRequestData" Name="FatigueLevel"/>
+<DataRequest xsi:type="PhysiologyDataRequestData" Name="RespirationRate"/>
+</DataRequests>
+
+<Actions>
+
+<!-- Morning: Warm start, moderate activity -->
+<Action xsi:type="EnvironmentChangeData">
+<Conditions>
+<AmbientTemperature value="28" unit="degC"/>
+<ClothingResistance value="0.7" unit="clo"/>
+<MeanRadiantTemperature value="30" unit="degC"/>
+<RelativeHumidity value="0.50"/>
+<RespirationAmbientTemperature value="28" unit="degC"/>
+</Conditions>
+</Action>
+
+<Action xsi:type="ExerciseData">
+<GenericExercise>
+<Intensity value="0.15"/>
+</GenericExercise>
+</Action>
+
+<Action xsi:type="AdvanceTimeData">
+<Time value="10" unit="min"/>
+</Action>
+
+<!-- Midday: Significant heat, increased activity -->
+<Action xsi:type="EnvironmentChangeData">
+<Conditions>
+<AmbientTemperature value="32" unit="degC"/>
+<ClothingResistance value="0.65" unit="clo"/>
+<MeanRadiantTemperature value="34" unit="degC"/>
+<RelativeHumidity value="0.55"/>
+<RespirationAmbientTemperature value="32" unit="degC"/>
+</Conditions>
+</Action>
+
+<Action xsi:type="ExerciseData">
+<GenericExercise>
+<Intensity value="0.22"/>
+</GenericExercise>
+</Action>
+
+<Action xsi:type="AdvanceTimeData">
+<Time value="10" unit="min"/>
+</Action>
+
+<!-- Afternoon: High heat stress develops -->
+<Action xsi:type="EnvironmentChangeData">
+<Conditions>
+<AmbientTemperature value="35" unit="degC"/>
+<ClothingResistance value="0.6" unit="clo"/>
+<MeanRadiantTemperature value="37" unit="degC"/>
+<RelativeHumidity value="0.60"/>
+<RespirationAmbientTemperature value="35" unit="degC"/>
+</Conditions>
+</Action>
+
+<Action xsi:type="ExerciseData">
+<GenericExercise>
+<Intensity value="0.25"/>
+</GenericExercise>
+</Action>
+
+<Action xsi:type="AdvanceTimeData">
+<Time value="10" unit="min"/>
+</Action>
+
+<!-- Peak Heat: Severe conditions -->
+<Action xsi:type="EnvironmentChangeData">
+<Conditions>
+<AmbientTemperature value="38" unit="degC"/>
+<ClothingResistance value="0.55" unit="clo"/>
+<MeanRadiantTemperature value="40" unit="degC"/>
+<RelativeHumidity value="0.65"/>
+<RespirationAmbientTemperature value="38" unit="degC"/>
+</Conditions>
+</Action>
+
+<Action xsi:type="ExerciseData">
+<GenericExercise>
+<Intensity value="0.20"/>
+</GenericExercise>
+</Action>
+
+<Action xsi:type="AdvanceTimeData">
+<Time value="4" unit="min"/>
+</Action>
+
+</Actions>
+</Scenario>

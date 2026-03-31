@@ -1,0 +1,37 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements">
+
+<Style src="ControlPanel.uss"/>
+
+<ui:VisualElement class="root">
+
+    <ui:VisualElement class="panel">
+
+        <ui:Label text="DIGITAL TWIN CONTROL" class="title"/>
+
+        <ui:Label text="AUTO SIMULATION" class="section"/>
+
+        <ui:Button name="normalButton" text="Normal"/>
+        <ui:Button name="moderateButton" text="Moderate"/>
+        <ui:Button name="heatwaveButton" text="Heatwave"/>
+        <ui:Button name="extremeButton" text="Extreme"/>
+
+        <ui:Label text="MANUAL CONTROL" class="section"/>
+
+        <ui:Slider name="tempSlider" label="Temperature" low-value="25" high-value="50"/>
+        <ui:Slider name="humiditySlider" label="Humidity" low-value="10" high-value="100"/>
+        <ui:Slider name="sunSlider" label="Sunlight" low-value="0" high-value="1"/>
+
+        <ui:Label text="STATUS" class="section"/>
+
+        <ui:Label name="coreTempLabel" text="Core Temp: 37°C"/>
+        <ui:Label name="heartRateLabel" text="Heart Rate: 72 bpm"/>
+        <ui:Label name="riskLabel" text="Heat Risk: Normal"/>
+
+    </ui:VisualElement>
+
+    <!-- GRAPH PANEL -->
+    <ui:VisualElement name="graphPanel" class="graphPanel"/>
+
+</ui:VisualElement>
+
+</ui:UXML>

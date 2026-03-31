@@ -1,0 +1,54 @@
+# =========================
+# Unity generated folders
+# =========================
+Library/
+Temp/
+Logs/
+Obj/
+Build/
+Builds/
+MemoryCaptures/
+UserSettings/
+
+# =========================
+# Visual Studio / Rider
+# =========================
+.vs/
+.vscode/
+*.csproj
+*.unityproj
+*.sln
+*.suo
+*.tmp
+*.user
+*.userprefs
+*.pidb
+*.booproj
+*.svd
+*.pdb
+*.mdb
+*.opendb
+*.VC.db
+
+# =========================
+# Unity cache files
+# =========================
+*.apk
+*.aab
+*.unitypackage
+
+# =========================
+# OS generated files
+# =========================
+.DS_Store
+Thumbs.db
+
+# =========================
+# Crash reports
+# =========================
+sysinfo.txt
+
+# =========================
+# Unity auto generated meta backup
+# =========================
+*.bak
