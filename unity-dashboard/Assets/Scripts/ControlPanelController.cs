@@ -6,7 +6,6 @@ public class ControlPanelController : MonoBehaviour
     public AvatarController avatar;
     public Light sun;
 
-    public BioGearsLauncher biogears;
     public CSVReader csvReader;
 
     GraphElement graph;
@@ -36,34 +35,33 @@ public class ControlPanelController : MonoBehaviour
         graph = new GraphElement();
         graph.style.flexGrow = 1;
 
-        graphPanel.Add(graph);
+        if(graphPanel != null)
+            graphPanel.Add(graph);
+
+        // Scenario buttons
 
         root.Q<Button>("normalButton").clicked += () =>
         {
             csvReader.autoMode = true;
-            biogears.RunNormal();
-            csvReader.SetCSV("normalscenarioResults.csv");
+            csvReader.SetCSV("NormalScenario.csv");
         };
 
         root.Q<Button>("moderateButton").clicked += () =>
         {
             csvReader.autoMode = true;
-            biogears.RunModerate();
-            csvReader.SetCSV("moderateheatscenarioResults.csv");
+            csvReader.SetCSV("ModerateScenario.csv");
         };
 
         root.Q<Button>("heatwaveButton").clicked += () =>
         {
             csvReader.autoMode = true;
-            biogears.RunHeatwave();
-            csvReader.SetCSV("heatwavescenarioResults.csv");
+            csvReader.SetCSV("HeatwaveScenario.csv");
         };
 
         root.Q<Button>("extremeButton").clicked += () =>
         {
             csvReader.autoMode = true;
-            biogears.RunExtreme();
-            csvReader.SetCSV("extremeheatwavescenarioResults.csv");
+            csvReader.SetCSV("ExtremeScenario.csv");
         };
 
         tempSlider.RegisterValueChangedCallback(evt => UpdateSimulation());
